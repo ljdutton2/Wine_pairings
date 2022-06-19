@@ -27,8 +27,9 @@ app.get("/", (req, res) => {
     .then((response) => response.json())
     .then((data) => {
       const wine = data.pairingText;
+      const products = data.productMatches;
       res.render("home", { wine });
-      console.log(wine);
+      console.log(wine, products);
     });
 });
 
