@@ -1,0 +1,71 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #e6e6e6;
+    margin: 1em 10em;
+  }
+  
+  header {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5c7aea;
+    color: #e6e6e6;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  header > h1 {
+    font-size: 4rem;
+  }
+  
+  header > form {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header > form > input {
+    margin-right: 0;
+    border: 2px solid #e6e6e6;
+    border-right: none;
+    width: 80%;
+    font-size: 1rem;
+    border-radius: 10px 0px 0px 10px;
+    padding: 0.5rem;
+  }
+  
+  header > form > button {
+    margin-left: 0;
+    border: 2px solid #e6e6e6;
+    border-left: none;
+    width: 15%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0px 10px 10px 0px;
+  }
+  
+  .wine {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:1em 1em;
+    
+  }
+  button {
+    margin-bottom: 2em;
+  }

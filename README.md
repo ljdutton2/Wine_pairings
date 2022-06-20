@@ -8,104 +8,70 @@ Wine not? is a node.js application that allows the user to enter the name of an 
 
 * Node.js
 * Express & Handlebars
+* Homebrew
 * Git
 * Spoonacular API found here: https://spoonacular.com/food-api/docs#Wine-Pairing
 
 
-## Common setup
+ ## Installation
+go to your terminal and run the following commands
 
-Clone the repo and install the dependencies.
+  Install node
+```bash title="Install NodeJS"
+brew install node
+```
+
+  Clone the repo and install the dependencies.
 
 ```bash
-git clone https://github.com/contentful/the-example-app.nodejs.git
-cd the-example-app.nodejs
+git clone https://github.com/ljdutton2/Wine_pairings.git
+cd Wine_pairings
 ```
 
 ```bash
 npm install
 ```
 
-## Steps for read-only access
-
 To start the express server, run the following
 
 ```bash
-npm run start:dev
+node app.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and take a look around.
+Open [http://localhost:3000](http://localhost:3000) and get started.
 
 
-## Steps for read and write access (recommended)
 
-Step 1: Install the [Contentful CLI](https://www.npmjs.com/package/contentful-cli)
 
-Step 2: Login to Contentful through the CLI. It will help you to create a [free account](https://www.contentful.com/sign-up/) if you don't have one already.
+
+
+
+## Wanna build your own? Dev Tutorial Below! &darr; 
+
+Step 1: Head over to the [Spoonacular](https://spoonacular.com/food-api/console#Dashboard) website and begin by making an account. Once you have an account click "My Console", then "Profile" from the left hand side options, "Generate API Key" and then finally "Show API key. Store this somewhere you can easily access it later!
+
+Step 2: create a new directory for your wine pairing app and navigate to it
 ```
-contentful login
+mkdir wine_pairing_app
+cd winepairing app
 ```
-Step 3: Create a new space
+Step 3: Install dependencies & packages we will be using 
+```bash title="Install NodeJS"
+brew install node
+npm install express
+npm install nodemon -g
+npm install express-handlebars
 ```
-contentful space create --name 'My space for the example app'
+Step 4: Initalize Project
+```bash title="Initialize"
+npm init -y
 ```
-Step 4: [Seed](https://github.com/contentful/contentful-cli/tree/master/docs/space/seed) the new space with the example content model [`the-example-app`](https://github.com/contentful/content-models/tree/master/the-example-app). Replace the `SPACE_ID` with the id returned from the create command executed in step 3
-```
-contentful space seed -s '<SPACE_ID>' -t the-example-app
-```
-Step 5: Head to the Contentful web app's API section and grab `SPACE_ID`, `DELIVERY_ACCESS_TOKEN`, `PREVIEW_ACCESS_TOKEN`.
-
-Step 6: Open `variables.env` and inject your credentials so it looks like this
-
-```
-NODE_ENV=development
-CONTENTFUL_SPACE_ID=<SPACE_ID>
-CONTENTFUL_DELIVERY_TOKEN=<DELIVERY_ACCESS_TOKEN>
-CONTENTFUL_PREVIEW_TOKEN=<PREVIEW_ACCESS_TOKEN>
-PORT=3000
-```
-
-Step 7: To start the express server, run the following
-```bash
-npm run start:dev
-```
-Final Step:
-
-Open [http://localhost:3000?editorial_features=enabled](http://localhost:3000?editorial_features=enabled) and take a look around. This URL flag adds an “Edit” button in the app on every editable piece of content which will take you back to Contentful web app where you can make changes. It also adds “Draft” and “Pending Changes” status indicators to all content if relevant.
-
-## Deploy to Heroku
-You can also deploy this app to Heroku:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-
-## Use Docker
-You can also run this app as a Docker container:
-
-Step 1: Clone the repo
-
-```bash
-git clone https://github.com/contentful/the-example-app.nodejs.git
+Step 5: Create main app file
+this is where all of the instructions for our app will live
+```bash title="Initialize"
+touch app.py
 ```
 
-Step 2: Build the Docker image
 
-```bash
-docker build -t the-example-app.nodejs .
-```
+##Further Learning 
 
-Step 3: Run the Docker container locally:
-
-```bash
-docker run -p 3000:3000 -d the-example-app.nodejs
-```
-
-If you created your own Contentful space, you can use it by overriding the following environment variables:
-
-```bash
-docker run -p 3000:3000 \
-  -e CONTENTFUL_SPACE_ID=<SPACE_ID> \
-  -e CONTENTFUL_DELIVERY_TOKEN=<DELIVERY_ACCESS_TOKEN> \
-  -e CONTENTFUL_PREVIEW_TOKEN=<PREVIEW_ACCESS_TOKEN> \
-  -d the-example-app.nodejs
-```
-​
