@@ -149,19 +149,20 @@ If we take a look at the above, there are 2 things to note in the home.handlebar
     1. the blocked out {{wine}} in the body - think of this as a placeholder for the data we will be pulling from the API
     2. we added the form here, we are getting the food choice of the user and keeping it accessible in our home page by having action set to "/"
 
-    ```
-*Lets go ahead and get our app connected to spoonacular. Remember that API from earlier? Grab it and paste it in your .env like this:
-'''
+  
+* Let's go ahead and get our app connected to spoonacular. Remember that API from earlier? Grab it and paste it in your .env like this:
+```
 API_KEY=<your_api_key_here>
-'''
-*And then we fully hide this key away from github by adding the entire .env file into your .ignore. Yep! That easy just write '.env' in .gitignore, and you're all set!
+```
+* we fully hide this key away from github by adding the entire .env file into your .ignore. Yep! That easy just write '.env' in .gitignore, and you're all set!
 
-*Great now lets go over to our app.js and set up the back end functionality to actually utilize this food item, and return the wine pairing reccomendation. 
-First lets make sure our app.js can access the api key now that its hidden away, add this below your other variable declaration
+* Great, now let's go over to our app.js and set up the back end functionality to actually utilize this food item, and return the wine pairing reccomendation. 
+First let'
+s make sure our app.js can access the api key now that its hidden away, add this below your other variable declaration
 ```
 require("dotenv").config();
 ```
-below that were going to add the node-fetch package. This is what allows us to fetch the data from the spoonacular API (more info on this in Further Learning)
+* Below that we're going to add the node-fetch package. This is what allows us to fetch the data from the spoonacular API (more info on this in Further Learning)
 ```
 const fetch = require("node-fetch");
 ```
@@ -195,7 +196,7 @@ Here we are saying the response is json data, within this data we're going to gr
         });
     });
 ```
-* Amazing almost there! Last thing we need to do is set up our local host to see this in action. Lets add this next express route:
+* Amazing, almost there! Last thing we need to do is set up our local host to see this in action. Lets add this next express route:
 
 ```
 app.listen(3000, () => {
@@ -209,4 +210,12 @@ node app.js
 ```
 
 ## Further Learning 
+
+* [Spoonacular Authentication Docs](https://spoonacular.com/food-api/docs#Authentication)
+* [Express](https://expressjs.com/en/starter/installing.html)
+* [Get vs. Post Requests](https://lazaroibanez.com/difference-between-the-http-requests-post-and-get-3b4ed40164c1)
+* [Handlebars](https://handlebarsjs.com/guide/)
+* [Postman](https://handlebarsjs.com/guide/) 
+
+
 
